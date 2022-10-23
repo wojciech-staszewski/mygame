@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<style>
+.wrap {
+    width:800px;
+    border:1px solid #000;
+    background:red;
+    margin:20px auto;
+    padding:20px 0;
+}
+.overflow {
+    margin:0 -400px;/* now equals 1600px wide */
+    min-height:0;
+    background:blue;
+    position:relative;
+}
+* html .overflow {
+    height:1px
+}
+.wrap2 .overflow {
+    padding:0 400px;
+}
+h1 {
+    text-align:center;
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+    <h1>Overflow parent</h1>
+    <div class="overflow">
+        <p>some filler text some filler text some filler text some filler text some filler text some filler text some filler text some filler text some filler text some filler text some filler text some filler text some filler text some filler text some filler text some filler text some filler text some filler text some filler text some filler text some filler text some filler text some filler text some filler text some filler text some filler text some filler text some filler text some filler text </p>
+    </div>
+    <p>following text</p>
+</div>
+<div class="wrap wrap2">
+    <h1>Overflow parent</h1>
+    <div class="overflow">
+        <p>some filler text some filler text some filler text some filler text some filler text some filler text some filler text some filler text some filler text some filler text some filler text some filler text some filler text some filler text some filler text some filler text some filler text some filler text some filler text some filler text some filler text some filler text some filler text some filler text some filler text some filler text some filler text some filler text some filler text </p>
+    </div>
+    <p>following text</p>
+</div>
+</body>
+</html>
