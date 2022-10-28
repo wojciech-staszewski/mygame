@@ -1,4 +1,4 @@
-let cards = ["1.png", "2.png", "3.png", "4.png", "5.png", "6.png", "7.png", "8.png", "9.png", "10.png", "11.png",  "12.png", "13.png", "14.png", "15.png", "16.png", "17.png", "18.png", "19.png", "20.png", "karta.png"];
+var cards = ["1.png", "2.png", "3.png", "4.png", "5.png", "6.png", "7.png", "8.png", "9.png", "10.png", "11.png",  "12.png", "13.png", "14.png", "15.png", "16.png", "17.png", "18.png", "19.png", "20.png", "karta.png"];
 
 
 
@@ -10,7 +10,7 @@ var lock = false;
 var pairsLeft = 0;
 var click = 0;
 
-let pictures, pairs, cards2, timer, secs, time, score, level;
+var pictures, pairs, cards2, timer, secs, time, score, level;
 
 
 window.onload = drawMenu;
@@ -160,8 +160,8 @@ function revealCard(nr)
 
 function hide2Cards(nr1, nr2)
 {
-	$('#c'+nr1).css('opacity', '0');
-	$('#c'+nr2).css('opacity', '0');
+	$('#c' + nr1).css('opacity', '0');
+	$('#c' + nr2).css('opacity', '0');
 	
 	pairsLeft--;
 	
@@ -178,13 +178,13 @@ function hide2Cards(nr1, nr2)
 
 function restore2Cards(nr1, nr2)
 {
-	$('#c'+nr1).css('background-image', 'url(img/karta.png)');
-	$('#c'+nr1).addClass('card');
-	$('#c'+nr1).removeClass('cardA');
+	$('#c' + nr1).css('background-image', 'url(img/karta.png)');
+	$('#c' + nr1).addClass('card');
+	$('#c' + nr1).removeClass('cardA');
 	
-	$('#c'+nr2).css('background-image', 'url(img/karta.png)');
-	$('#c'+nr2).addClass('card');
-	$('#c'+nr2).removeClass('cardA');
+	$('#c' + nr2).css('background-image', 'url(img/karta.png)');
+	$('#c' + nr2).addClass('card');
+	$('#c' + nr2).removeClass('cardA');
 	
 	lock = false;
 }
