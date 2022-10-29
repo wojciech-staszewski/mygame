@@ -56,7 +56,7 @@ function prepare(setLevel)
 			$board.css("width", "800px");
 			break;
 			
-			// hard - 5x6 - 32 cards
+			// hard - 5x6 - 30 cards
 			case 2:
 			level = "hard";
 			pairs = 15;
