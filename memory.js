@@ -8,9 +8,9 @@ var oneVisible = false;
 var turnCounter = 0;
 var lock = false;
 var pairsLeft = 0;
-var click = 0;
 
-var pictures, pairs, cards2, timer, secs, time, score, level;
+
+var pictures, pairs, timer, secs, time, score, level;
 
 
 window.onload = drawMenu;
@@ -42,21 +42,21 @@ function prepare(setLevel)
 	
 	switch (setLevel) 
 	{
-			// easy - 3x3 - 16 cards
+			// easy - 3x4 - 12 cards
 			case 0:
 			level = "easy";
 			pairs = 6;
 			$board.css("width", "600px");
 			break;
 			
-			// normal - 4x5 - 16 cards
+			// normal - 4x5 - 20 cards
 			case 1:
 			level = "medium";
 			pairs = 10;
 			$board.css("width", "800px");
 			break;
 			
-			// hard - 5x6 - 20 cards
+			// hard - 5x6 - 32 cards
 			case 2:
 			level = "hard";
 			pairs = 15;
@@ -76,7 +76,7 @@ function prepare(setLevel)
 		.value();
 	pictures = shuffleArray(pictures);
 
-	for(let i = 0; i < pictures.length; i++) $field.append('<div class="card" id="c'+i+'" onclick="revealCard('+i+')"></div>');
+	for(let i = 0; i < pictures.length; i++) $field.append('<div class="card" id="c'+ i +'" onclick="revealCard('+ i +')"></div>');
 
 
 	// Draw on board timer and turn counter
@@ -88,7 +88,7 @@ function prepare(setLevel)
 	);
 	
 	
-	$(".score").addClass(level);
+	//$(".score").addClass(level);
 	
 	pairsLeft = pairs;
 	//alert(pairsLeft);
@@ -100,9 +100,11 @@ timer = new Timer();
 
 function revealCard(nr)
 {
-	//alert(nr);
+	//alert(lock);
+
 	
-	if (!timer.isRunning()) {
+	if (!timer.isRunning()) 
+	{
       // Start timer
       timer.start({ precision: "seconds" });
       timer.addEventListener("secondsUpdated", function() {   
@@ -172,7 +174,7 @@ function hide2Cards(nr1, nr2)
 		$('.board').html('<h2>You win!<br>Number of turns: ' + turnCounter + ' <br>Time: ' +time + '</h2><div class="reset" onclick="location.reload()">JESZCZE RAZ</div>');
 		$('#score '+ level).html(' ');
 	}
-	
+	visible_nr = null;
 	lock = false;
 }
 
@@ -186,5 +188,6 @@ function restore2Cards(nr1, nr2)
 	$('#c' + nr2).addClass('card');
 	$('#c' + nr2).removeClass('cardA');
 	
+	visible_nr = null;
 	lock = false;
 }
